@@ -1,0 +1,9 @@
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Data\bin\Release\TTraxx.PokemonGOManager.Data.dll
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Data\bin\Release\TTraxx.PokemonGOManager.Data.pdb
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Data\bin\Release\Newtonsoft.Json.dll
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Data\bin\Release\TTraxx.PokemonGOManager.Entities.dll
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Data\bin\Release\TTraxx.PokemonGOManager.Entities.pdb
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Data\bin\Release\Newtonsoft.Json.xml
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Data\obj\Release\TTraxx.PokemonGOManager.Data.csprojResolveAssemblyReference.cache
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Data\obj\Release\TTraxx.PokemonGOManager.Data.dll
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Data\obj\Release\TTraxx.PokemonGOManager.Data.pdb

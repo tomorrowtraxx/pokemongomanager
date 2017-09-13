@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTraxx.PokemonGOManager.WPF", "TTraxx.PokemonGOManager.WPF\TTraxx.PokemonGOManager.WPF.csproj", "{9E325050-AAA3-4CB8-8076-0FCBDE6268AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTraxx.PokemonGOManager.PokeScraper", "TTraxx.PokemonGOManager.PokeScraper\TTraxx.PokemonGOManager.PokeScraper.csproj", "{8E0761E0-AD2E-4182-90AF-7AF1C3DD5498}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTraxx.PokemonGOManager.Entities", "TTraxx.PokemonGOManager.Entities\TTraxx.PokemonGOManager.Entities.csproj", "{C43583D9-209A-4555-BBE8-732C7B6E6F3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTraxx.PokemonGOManager.Data", "TTraxx.PokemonGOManager.Data\TTraxx.PokemonGOManager.Data.csproj", "{AB44AA1C-9CD2-43CA-A3D6-07D02B294CDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TTraxx.PokemonGOManager.Business", "TTraxx.PokemonGOManager.Business\TTraxx.PokemonGOManager.Business.csproj", "{52D7AAC9-9987-43CC-9FCA-8007CBB70FA1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9E325050-AAA3-4CB8-8076-0FCBDE6268AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E325050-AAA3-4CB8-8076-0FCBDE6268AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E325050-AAA3-4CB8-8076-0FCBDE6268AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E325050-AAA3-4CB8-8076-0FCBDE6268AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E0761E0-AD2E-4182-90AF-7AF1C3DD5498}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E0761E0-AD2E-4182-90AF-7AF1C3DD5498}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E0761E0-AD2E-4182-90AF-7AF1C3DD5498}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E0761E0-AD2E-4182-90AF-7AF1C3DD5498}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C43583D9-209A-4555-BBE8-732C7B6E6F3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C43583D9-209A-4555-BBE8-732C7B6E6F3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C43583D9-209A-4555-BBE8-732C7B6E6F3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C43583D9-209A-4555-BBE8-732C7B6E6F3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB44AA1C-9CD2-43CA-A3D6-07D02B294CDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB44AA1C-9CD2-43CA-A3D6-07D02B294CDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB44AA1C-9CD2-43CA-A3D6-07D02B294CDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB44AA1C-9CD2-43CA-A3D6-07D02B294CDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52D7AAC9-9987-43CC-9FCA-8007CBB70FA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52D7AAC9-9987-43CC-9FCA-8007CBB70FA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52D7AAC9-9987-43CC-9FCA-8007CBB70FA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52D7AAC9-9987-43CC-9FCA-8007CBB70FA1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,11 @@
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Business\bin\Release\TTraxx.PokemonGOManager.Business.dll
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Business\bin\Release\TTraxx.PokemonGOManager.Business.pdb
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Business\bin\Release\TTraxx.PokemonGOManager.Data.dll
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Business\bin\Release\TTraxx.PokemonGOManager.Entities.dll
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Business\bin\Release\Newtonsoft.Json.dll
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Business\bin\Release\TTraxx.PokemonGOManager.Data.pdb
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Business\bin\Release\TTraxx.PokemonGOManager.Entities.pdb
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Business\bin\Release\Newtonsoft.Json.xml
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Business\obj\Release\TTraxx.PokemonGOManager.Business.csprojResolveAssemblyReference.cache
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Business\obj\Release\TTraxx.PokemonGOManager.Business.dll
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Business\obj\Release\TTraxx.PokemonGOManager.Business.pdb

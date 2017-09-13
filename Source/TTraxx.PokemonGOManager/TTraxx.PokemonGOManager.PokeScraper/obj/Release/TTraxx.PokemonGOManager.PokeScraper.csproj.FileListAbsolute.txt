@@ -1,0 +1,12 @@
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.PokeScraper\bin\Release\TTraxx.PokemonGOManager.PokeScraper.dll
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.PokeScraper\bin\Release\TTraxx.PokemonGOManager.PokeScraper.pdb
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.PokeScraper\bin\Release\HtmlAgilityPack.dll
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.PokeScraper\bin\Release\Newtonsoft.Json.dll
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.PokeScraper\bin\Release\TTraxx.PokemonGOManager.Entities.dll
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.PokeScraper\bin\Release\TTraxx.PokemonGOManager.Entities.pdb
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.PokeScraper\bin\Release\HtmlAgilityPack.pdb
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.PokeScraper\bin\Release\HtmlAgilityPack.xml
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.PokeScraper\bin\Release\Newtonsoft.Json.xml
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.PokeScraper\obj\Release\TTraxx.PokemonGOManager.PokeScraper.csprojResolveAssemblyReference.cache
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.PokeScraper\obj\Release\TTraxx.PokemonGOManager.PokeScraper.dll
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.PokeScraper\obj\Release\TTraxx.PokemonGOManager.PokeScraper.pdb

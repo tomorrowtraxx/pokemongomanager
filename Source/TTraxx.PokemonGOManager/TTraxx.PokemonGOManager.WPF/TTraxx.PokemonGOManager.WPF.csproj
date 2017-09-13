@@ -1,0 +1,939 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9E325050-AAA3-4CB8-8076-0FCBDE6268AB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TTraxx.PokemonGOManager.WPF</RootNamespace>
+    <AssemblyName>TTraxx.PokemonGOManager.WPF</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindowTest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Behaviors\ClippingBehavior.cs" />
+    <Compile Include="Controls\GreyableImage.cs" />
+    <Compile Include="Converters\XamlValueConverters.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindowTest.xaml.cs">
+      <DependentUpon>MainWindowTest.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="PokedexW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="PokedexW.xaml.cs">
+      <DependentUpon>PokedexW.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TTraxx.PokemonGOManager.Business\TTraxx.PokemonGOManager.Business.csproj">
+      <Project>{52d7aac9-9987-43cc-9fca-8007cbb70fa1}</Project>
+      <Name>TTraxx.PokemonGOManager.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TTraxx.PokemonGOManager.Entities\TTraxx.PokemonGOManager.Entities.csproj">
+      <Project>{c43583d9-209a-4555-bbe8-732c7b6e6f3d}</Project>
+      <Name>TTraxx.PokemonGOManager.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TTraxx.PokemonGOManager.PokeScraper\TTraxx.PokemonGOManager.PokeScraper.csproj">
+      <Project>{8e0761e0-ad2e-4182-90af-7af1c3dd5498}</Project>
+      <Name>TTraxx.PokemonGOManager.PokeScraper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Pokedex\Big\001MS.png" />
+    <Resource Include="Images\Pokedex\Big\002MS.png" />
+    <Resource Include="Images\Pokedex\Big\003MS.png" />
+    <Resource Include="Images\Pokedex\Big\004MS.png" />
+    <Resource Include="Images\Pokedex\Big\005MS.png" />
+    <Resource Include="Images\Pokedex\Big\006MS.png" />
+    <Resource Include="Images\Pokedex\Big\007MS.png" />
+    <Resource Include="Images\Pokedex\Big\008MS.png" />
+    <Resource Include="Images\Pokedex\Big\009MS.png" />
+    <Resource Include="Images\Pokedex\Big\010MS.png" />
+    <Resource Include="Images\Pokedex\Big\011MS.png" />
+    <Resource Include="Images\Pokedex\Big\012MS.png" />
+    <Resource Include="Images\Pokedex\Big\013MS.png" />
+    <Resource Include="Images\Pokedex\Big\014MS.png" />
+    <Resource Include="Images\Pokedex\Big\015MS.png" />
+    <Resource Include="Images\Pokedex\Big\016MS.png" />
+    <Resource Include="Images\Pokedex\Big\017MS.png" />
+    <Resource Include="Images\Pokedex\Big\018MS.png" />
+    <Resource Include="Images\Pokedex\Big\019MS.png" />
+    <Resource Include="Images\Pokedex\Big\020MS.png" />
+    <Resource Include="Images\Pokedex\Big\021MS.png" />
+    <Resource Include="Images\Pokedex\Big\022MS.png" />
+    <Resource Include="Images\Pokedex\Big\023MS.png" />
+    <Resource Include="Images\Pokedex\Big\024MS.png" />
+    <Resource Include="Images\Pokedex\Big\025MS.png" />
+    <Resource Include="Images\Pokedex\Big\026MS.png" />
+    <Resource Include="Images\Pokedex\Big\027MS.png" />
+    <Resource Include="Images\Pokedex\Big\028MS.png" />
+    <Resource Include="Images\Pokedex\Big\029MS.png" />
+    <Resource Include="Images\Pokedex\Big\030MS.png" />
+    <Resource Include="Images\Pokedex\Big\031MS.png" />
+    <Resource Include="Images\Pokedex\Big\032MS.png" />
+    <Resource Include="Images\Pokedex\Big\033MS.png" />
+    <Resource Include="Images\Pokedex\Big\034MS.png" />
+    <Resource Include="Images\Pokedex\Big\035MS.png" />
+    <Resource Include="Images\Pokedex\Big\036MS.png" />
+    <Resource Include="Images\Pokedex\Big\037MS.png" />
+    <Resource Include="Images\Pokedex\Big\038MS.png" />
+    <Resource Include="Images\Pokedex\Big\039MS.png" />
+    <Resource Include="Images\Pokedex\Big\040MS.png" />
+    <Resource Include="Images\Pokedex\Big\041MS.png" />
+    <Resource Include="Images\Pokedex\Big\042MS.png" />
+    <Resource Include="Images\Pokedex\Big\043MS.png" />
+    <Resource Include="Images\Pokedex\Big\044MS.png" />
+    <Resource Include="Images\Pokedex\Big\045MS.png" />
+    <Resource Include="Images\Pokedex\Big\046MS.png" />
+    <Resource Include="Images\Pokedex\Big\047MS.png" />
+    <Resource Include="Images\Pokedex\Big\048MS.png" />
+    <Resource Include="Images\Pokedex\Big\049MS.png" />
+    <Resource Include="Images\Pokedex\Big\050MS.png" />
+    <Resource Include="Images\Pokedex\Big\051MS.png" />
+    <Resource Include="Images\Pokedex\Big\052MS.png" />
+    <Resource Include="Images\Pokedex\Big\053MS.png" />
+    <Resource Include="Images\Pokedex\Big\054MS.png" />
+    <Resource Include="Images\Pokedex\Big\055MS.png" />
+    <Resource Include="Images\Pokedex\Big\056MS.png" />
+    <Resource Include="Images\Pokedex\Big\057MS.png" />
+    <Resource Include="Images\Pokedex\Big\058MS.png" />
+    <Resource Include="Images\Pokedex\Big\059MS.png" />
+    <Resource Include="Images\Pokedex\Big\060MS.png" />
+    <Resource Include="Images\Pokedex\Big\061MS.png" />
+    <Resource Include="Images\Pokedex\Big\062MS.png" />
+    <Resource Include="Images\Pokedex\Big\063MS.png" />
+    <Resource Include="Images\Pokedex\Big\064MS.png" />
+    <Resource Include="Images\Pokedex\Big\065MS.png" />
+    <Resource Include="Images\Pokedex\Big\066MS.png" />
+    <Resource Include="Images\Pokedex\Big\067MS.png" />
+    <Resource Include="Images\Pokedex\Big\068MS.png" />
+    <Resource Include="Images\Pokedex\Big\069MS.png" />
+    <Resource Include="Images\Pokedex\Big\070MS.png" />
+    <Resource Include="Images\Pokedex\Big\071MS.png" />
+    <Resource Include="Images\Pokedex\Big\072MS.png" />
+    <Resource Include="Images\Pokedex\Big\073MS.png" />
+    <Resource Include="Images\Pokedex\Big\074MS.png" />
+    <Resource Include="Images\Pokedex\Big\075MS.png" />
+    <Resource Include="Images\Pokedex\Big\076MS.png" />
+    <Resource Include="Images\Pokedex\Big\077MS.png" />
+    <Resource Include="Images\Pokedex\Big\078MS.png" />
+    <Resource Include="Images\Pokedex\Big\079MS.png" />
+    <Resource Include="Images\Pokedex\Big\080MS.png" />
+    <Resource Include="Images\Pokedex\Big\081MS.png" />
+    <Resource Include="Images\Pokedex\Big\082MS.png" />
+    <Resource Include="Images\Pokedex\Big\083MS.png" />
+    <Resource Include="Images\Pokedex\Big\084MS.png" />
+    <Resource Include="Images\Pokedex\Big\085MS.png" />
+    <Resource Include="Images\Pokedex\Big\086MS.png" />
+    <Resource Include="Images\Pokedex\Big\087MS.png" />
+    <Resource Include="Images\Pokedex\Big\088MS.png" />
+    <Resource Include="Images\Pokedex\Big\089MS.png" />
+    <Resource Include="Images\Pokedex\Big\090MS.png" />
+    <Resource Include="Images\Pokedex\Big\091MS.png" />
+    <Resource Include="Images\Pokedex\Big\092MS.png" />
+    <Resource Include="Images\Pokedex\Big\093MS.png" />
+    <Resource Include="Images\Pokedex\Big\094MS.png" />
+    <Resource Include="Images\Pokedex\Big\095MS.png" />
+    <Resource Include="Images\Pokedex\Big\096MS.png" />
+    <Resource Include="Images\Pokedex\Big\097MS.png" />
+    <Resource Include="Images\Pokedex\Big\098MS.png" />
+    <Resource Include="Images\Pokedex\Big\099MS.png" />
+    <Resource Include="Images\Pokedex\Big\100MS.png" />
+    <Resource Include="Images\Pokedex\Big\101MS.png" />
+    <Resource Include="Images\Pokedex\Big\102MS.png" />
+    <Resource Include="Images\Pokedex\Big\103MS.png" />
+    <Resource Include="Images\Pokedex\Big\104MS.png" />
+    <Resource Include="Images\Pokedex\Big\105MS.png" />
+    <Resource Include="Images\Pokedex\Big\106MS.png" />
+    <Resource Include="Images\Pokedex\Big\107MS.png" />
+    <Resource Include="Images\Pokedex\Big\108MS.png" />
+    <Resource Include="Images\Pokedex\Big\109MS.png" />
+    <Resource Include="Images\Pokedex\Big\110MS.png" />
+    <Resource Include="Images\Pokedex\Big\111MS.png" />
+    <Resource Include="Images\Pokedex\Big\112MS.png" />
+    <Resource Include="Images\Pokedex\Big\113MS.png" />
+    <Resource Include="Images\Pokedex\Big\114MS.png" />
+    <Resource Include="Images\Pokedex\Big\115MS.png" />
+    <Resource Include="Images\Pokedex\Big\116MS.png" />
+    <Resource Include="Images\Pokedex\Big\117MS.png" />
+    <Resource Include="Images\Pokedex\Big\118MS.png" />
+    <Resource Include="Images\Pokedex\Big\119MS.png" />
+    <Resource Include="Images\Pokedex\Big\120MS.png" />
+    <Resource Include="Images\Pokedex\Big\121MS.png" />
+    <Resource Include="Images\Pokedex\Big\122MS.png" />
+    <Resource Include="Images\Pokedex\Big\123MS.png" />
+    <Resource Include="Images\Pokedex\Big\124MS.png" />
+    <Resource Include="Images\Pokedex\Big\125MS.png" />
+    <Resource Include="Images\Pokedex\Big\126MS.png" />
+    <Resource Include="Images\Pokedex\Big\127MS.png" />
+    <Resource Include="Images\Pokedex\Big\128MS.png" />
+    <Resource Include="Images\Pokedex\Big\129MS.png" />
+    <Resource Include="Images\Pokedex\Big\130MS.png" />
+    <Resource Include="Images\Pokedex\Big\131MS.png" />
+    <Resource Include="Images\Pokedex\Big\132MS.png" />
+    <Resource Include="Images\Pokedex\Big\133MS.png" />
+    <Resource Include="Images\Pokedex\Big\134MS.png" />
+    <Resource Include="Images\Pokedex\Big\135MS.png" />
+    <Resource Include="Images\Pokedex\Big\136MS.png" />
+    <Resource Include="Images\Pokedex\Big\137MS.png" />
+    <Resource Include="Images\Pokedex\Big\138MS.png" />
+    <Resource Include="Images\Pokedex\Big\139MS.png" />
+    <Resource Include="Images\Pokedex\Big\140MS.png" />
+    <Resource Include="Images\Pokedex\Big\141MS.png" />
+    <Resource Include="Images\Pokedex\Big\142MS.png" />
+    <Resource Include="Images\Pokedex\Big\143MS.png" />
+    <Resource Include="Images\Pokedex\Big\144MS.png" />
+    <Resource Include="Images\Pokedex\Big\145MS.png" />
+    <Resource Include="Images\Pokedex\Big\146MS.png" />
+    <Resource Include="Images\Pokedex\Big\147MS.png" />
+    <Resource Include="Images\Pokedex\Big\148MS.png" />
+    <Resource Include="Images\Pokedex\Big\149MS.png" />
+    <Resource Include="Images\Pokedex\Big\150MS.png" />
+    <Resource Include="Images\Pokedex\Big\151MS.png" />
+    <Resource Include="Images\Pokedex\Big\152MS.png" />
+    <Resource Include="Images\Pokedex\Big\153MS.png" />
+    <Resource Include="Images\Pokedex\Big\154MS.png" />
+    <Resource Include="Images\Pokedex\Big\155MS.png" />
+    <Resource Include="Images\Pokedex\Big\156MS.png" />
+    <Resource Include="Images\Pokedex\Big\157MS.png" />
+    <Resource Include="Images\Pokedex\Big\158MS.png" />
+    <Resource Include="Images\Pokedex\Big\159MS.png" />
+    <Resource Include="Images\Pokedex\Big\160MS.png" />
+    <Resource Include="Images\Pokedex\Big\161MS.png" />
+    <Resource Include="Images\Pokedex\Big\162MS.png" />
+    <Resource Include="Images\Pokedex\Big\163MS.png" />
+    <Resource Include="Images\Pokedex\Big\164MS.png" />
+    <Resource Include="Images\Pokedex\Big\165MS.png" />
+    <Resource Include="Images\Pokedex\Big\166MS.png" />
+    <Resource Include="Images\Pokedex\Big\167MS.png" />
+    <Resource Include="Images\Pokedex\Big\168MS.png" />
+    <Resource Include="Images\Pokedex\Big\169MS.png" />
+    <Resource Include="Images\Pokedex\Big\170MS.png" />
+    <Resource Include="Images\Pokedex\Big\171MS.png" />
+    <Resource Include="Images\Pokedex\Big\172MS.png" />
+    <Resource Include="Images\Pokedex\Big\173MS.png" />
+    <Resource Include="Images\Pokedex\Big\174MS.png" />
+    <Resource Include="Images\Pokedex\Big\175MS.png" />
+    <Resource Include="Images\Pokedex\Big\176MS.png" />
+    <Resource Include="Images\Pokedex\Big\177MS.png" />
+    <Resource Include="Images\Pokedex\Big\178MS.png" />
+    <Resource Include="Images\Pokedex\Big\179MS.png" />
+    <Resource Include="Images\Pokedex\Big\180MS.png" />
+    <Resource Include="Images\Pokedex\Big\181MS.png" />
+    <Resource Include="Images\Pokedex\Big\182MS.png" />
+    <Resource Include="Images\Pokedex\Big\183MS.png" />
+    <Resource Include="Images\Pokedex\Big\184MS.png" />
+    <Resource Include="Images\Pokedex\Big\185MS.png" />
+    <Resource Include="Images\Pokedex\Big\186MS.png" />
+    <Resource Include="Images\Pokedex\Big\187MS.png" />
+    <Resource Include="Images\Pokedex\Big\188MS.png" />
+    <Resource Include="Images\Pokedex\Big\189MS.png" />
+    <Resource Include="Images\Pokedex\Big\190MS.png" />
+    <Resource Include="Images\Pokedex\Big\191MS.png" />
+    <Resource Include="Images\Pokedex\Big\192MS.png" />
+    <Resource Include="Images\Pokedex\Big\193MS.png" />
+    <Resource Include="Images\Pokedex\Big\194MS.png" />
+    <Resource Include="Images\Pokedex\Big\195MS.png" />
+    <Resource Include="Images\Pokedex\Big\196MS.png" />
+    <Resource Include="Images\Pokedex\Big\197MS.png" />
+    <Resource Include="Images\Pokedex\Big\198MS.png" />
+    <Resource Include="Images\Pokedex\Big\199MS.png" />
+    <Resource Include="Images\Pokedex\Big\200MS.png" />
+    <Resource Include="Images\Pokedex\Big\201MS.png" />
+    <Resource Include="Images\Pokedex\Big\202MS.png" />
+    <Resource Include="Images\Pokedex\Big\203MS.png" />
+    <Resource Include="Images\Pokedex\Big\204MS.png" />
+    <Resource Include="Images\Pokedex\Big\205MS.png" />
+    <Resource Include="Images\Pokedex\Big\206MS.png" />
+    <Resource Include="Images\Pokedex\Big\207MS.png" />
+    <Resource Include="Images\Pokedex\Big\208MS.png" />
+    <Resource Include="Images\Pokedex\Big\209MS.png" />
+    <Resource Include="Images\Pokedex\Big\210MS.png" />
+    <Resource Include="Images\Pokedex\Big\211MS.png" />
+    <Resource Include="Images\Pokedex\Big\212MS.png" />
+    <Resource Include="Images\Pokedex\Big\213MS.png" />
+    <Resource Include="Images\Pokedex\Big\214MS.png" />
+    <Resource Include="Images\Pokedex\Big\215MS.png" />
+    <Resource Include="Images\Pokedex\Big\216MS.png" />
+    <Resource Include="Images\Pokedex\Big\217MS.png" />
+    <Resource Include="Images\Pokedex\Big\218MS.png" />
+    <Resource Include="Images\Pokedex\Big\219MS.png" />
+    <Resource Include="Images\Pokedex\Big\220MS.png" />
+    <Resource Include="Images\Pokedex\Big\221MS.png" />
+    <Resource Include="Images\Pokedex\Big\222MS.png" />
+    <Resource Include="Images\Pokedex\Big\223MS.png" />
+    <Resource Include="Images\Pokedex\Big\224MS.png" />
+    <Resource Include="Images\Pokedex\Big\225MS.png" />
+    <Resource Include="Images\Pokedex\Big\226MS.png" />
+    <Resource Include="Images\Pokedex\Big\227MS.png" />
+    <Resource Include="Images\Pokedex\Big\228MS.png" />
+    <Resource Include="Images\Pokedex\Big\229MS.png" />
+    <Resource Include="Images\Pokedex\Big\230MS.png" />
+    <Resource Include="Images\Pokedex\Big\231MS.png" />
+    <Resource Include="Images\Pokedex\Big\232MS.png" />
+    <Resource Include="Images\Pokedex\Big\233MS.png" />
+    <Resource Include="Images\Pokedex\Big\234MS.png" />
+    <Resource Include="Images\Pokedex\Big\235MS.png" />
+    <Resource Include="Images\Pokedex\Big\236MS.png" />
+    <Resource Include="Images\Pokedex\Big\237MS.png" />
+    <Resource Include="Images\Pokedex\Big\238MS.png" />
+    <Resource Include="Images\Pokedex\Big\239MS.png" />
+    <Resource Include="Images\Pokedex\Big\240MS.png" />
+    <Resource Include="Images\Pokedex\Big\241MS.png" />
+    <Resource Include="Images\Pokedex\Big\242MS.png" />
+    <Resource Include="Images\Pokedex\Big\243MS.png" />
+    <Resource Include="Images\Pokedex\Big\244MS.png" />
+    <Resource Include="Images\Pokedex\Big\245MS.png" />
+    <Resource Include="Images\Pokedex\Big\246MS.png" />
+    <Resource Include="Images\Pokedex\Big\247MS.png" />
+    <Resource Include="Images\Pokedex\Big\248MS.png" />
+    <Resource Include="Images\Pokedex\Big\249MS.png" />
+    <Resource Include="Images\Pokedex\Big\250MS.png" />
+    <Resource Include="Images\Pokedex\Big\251MS.png" />
+    <Resource Include="Images\Pokedex\Big\252MS.png" />
+    <Resource Include="Images\Pokedex\Big\253MS.png" />
+    <Resource Include="Images\Pokedex\Big\254MS.png" />
+    <Resource Include="Images\Pokedex\Big\255MS.png" />
+    <Resource Include="Images\Pokedex\Big\256MS.png" />
+    <Resource Include="Images\Pokedex\Big\257MS.png" />
+    <Resource Include="Images\Pokedex\Big\258MS.png" />
+    <Resource Include="Images\Pokedex\Big\259MS.png" />
+    <Resource Include="Images\Pokedex\Big\260MS.png" />
+    <Resource Include="Images\Pokedex\Big\261MS.png" />
+    <Resource Include="Images\Pokedex\Big\262MS.png" />
+    <Resource Include="Images\Pokedex\Big\263MS.png" />
+    <Resource Include="Images\Pokedex\Big\264MS.png" />
+    <Resource Include="Images\Pokedex\Big\265MS.png" />
+    <Resource Include="Images\Pokedex\Big\266MS.png" />
+    <Resource Include="Images\Pokedex\Big\267MS.png" />
+    <Resource Include="Images\Pokedex\Big\268MS.png" />
+    <Resource Include="Images\Pokedex\Big\269MS.png" />
+    <Resource Include="Images\Pokedex\Big\270MS.png" />
+    <Resource Include="Images\Pokedex\Big\271MS.png" />
+    <Resource Include="Images\Pokedex\Big\272MS.png" />
+    <Resource Include="Images\Pokedex\Big\273MS.png" />
+    <Resource Include="Images\Pokedex\Big\274MS.png" />
+    <Resource Include="Images\Pokedex\Big\275MS.png" />
+    <Resource Include="Images\Pokedex\Big\276MS.png" />
+    <Resource Include="Images\Pokedex\Big\277MS.png" />
+    <Resource Include="Images\Pokedex\Big\278MS.png" />
+    <Resource Include="Images\Pokedex\Big\279MS.png" />
+    <Resource Include="Images\Pokedex\Big\280MS.png" />
+    <Resource Include="Images\Pokedex\Big\281MS.png" />
+    <Resource Include="Images\Pokedex\Big\282MS.png" />
+    <Resource Include="Images\Pokedex\Big\283MS.png" />
+    <Resource Include="Images\Pokedex\Big\284MS.png" />
+    <Resource Include="Images\Pokedex\Big\285MS.png" />
+    <Resource Include="Images\Pokedex\Big\286MS.png" />
+    <Resource Include="Images\Pokedex\Big\287MS.png" />
+    <Resource Include="Images\Pokedex\Big\288MS.png" />
+    <Resource Include="Images\Pokedex\Big\289MS.png" />
+    <Resource Include="Images\Pokedex\Big\290MS.png" />
+    <Resource Include="Images\Pokedex\Big\291MS.png" />
+    <Resource Include="Images\Pokedex\Big\292MS.png" />
+    <Resource Include="Images\Pokedex\Big\293MS.png" />
+    <Resource Include="Images\Pokedex\Big\294MS.png" />
+    <Resource Include="Images\Pokedex\Big\295MS.png" />
+    <Resource Include="Images\Pokedex\Big\296MS.png" />
+    <Resource Include="Images\Pokedex\Big\297MS.png" />
+    <Resource Include="Images\Pokedex\Big\298MS.png" />
+    <Resource Include="Images\Pokedex\Big\299MS.png" />
+    <Resource Include="Images\Pokedex\Big\300MS.png" />
+    <Resource Include="Images\Pokedex\Big\301MS.png" />
+    <Resource Include="Images\Pokedex\Big\302MS.png" />
+    <Resource Include="Images\Pokedex\Big\303MS.png" />
+    <Resource Include="Images\Pokedex\Big\304MS.png" />
+    <Resource Include="Images\Pokedex\Big\305MS.png" />
+    <Resource Include="Images\Pokedex\Big\306MS.png" />
+    <Resource Include="Images\Pokedex\Big\307MS.png" />
+    <Resource Include="Images\Pokedex\Big\308MS.png" />
+    <Resource Include="Images\Pokedex\Big\309MS.png" />
+    <Resource Include="Images\Pokedex\Big\310MS.png" />
+    <Resource Include="Images\Pokedex\Big\311MS.png" />
+    <Resource Include="Images\Pokedex\Big\312MS.png" />
+    <Resource Include="Images\Pokedex\Big\313MS.png" />
+    <Resource Include="Images\Pokedex\Big\314MS.png" />
+    <Resource Include="Images\Pokedex\Big\315MS.png" />
+    <Resource Include="Images\Pokedex\Big\316MS.png" />
+    <Resource Include="Images\Pokedex\Big\317MS.png" />
+    <Resource Include="Images\Pokedex\Big\318MS.png" />
+    <Resource Include="Images\Pokedex\Big\319MS.png" />
+    <Resource Include="Images\Pokedex\Big\320MS.png" />
+    <Resource Include="Images\Pokedex\Big\321MS.png" />
+    <Resource Include="Images\Pokedex\Big\322MS.png" />
+    <Resource Include="Images\Pokedex\Big\323MS.png" />
+    <Resource Include="Images\Pokedex\Big\324MS.png" />
+    <Resource Include="Images\Pokedex\Big\325MS.png" />
+    <Resource Include="Images\Pokedex\Big\326MS.png" />
+    <Resource Include="Images\Pokedex\Big\327MS.png" />
+    <Resource Include="Images\Pokedex\Big\328MS.png" />
+    <Resource Include="Images\Pokedex\Big\329MS.png" />
+    <Resource Include="Images\Pokedex\Big\330MS.png" />
+    <Resource Include="Images\Pokedex\Big\331MS.png" />
+    <Resource Include="Images\Pokedex\Big\332MS.png" />
+    <Resource Include="Images\Pokedex\Big\333MS.png" />
+    <Resource Include="Images\Pokedex\Big\334MS.png" />
+    <Resource Include="Images\Pokedex\Big\335MS.png" />
+    <Resource Include="Images\Pokedex\Big\336MS.png" />
+    <Resource Include="Images\Pokedex\Big\337MS.png" />
+    <Resource Include="Images\Pokedex\Big\338MS.png" />
+    <Resource Include="Images\Pokedex\Big\339MS.png" />
+    <Resource Include="Images\Pokedex\Big\340MS.png" />
+    <Resource Include="Images\Pokedex\Big\341MS.png" />
+    <Resource Include="Images\Pokedex\Big\342MS.png" />
+    <Resource Include="Images\Pokedex\Big\343MS.png" />
+    <Resource Include="Images\Pokedex\Big\344MS.png" />
+    <Resource Include="Images\Pokedex\Big\345MS.png" />
+    <Resource Include="Images\Pokedex\Big\346MS.png" />
+    <Resource Include="Images\Pokedex\Big\347MS.png" />
+    <Resource Include="Images\Pokedex\Big\348MS.png" />
+    <Resource Include="Images\Pokedex\Big\349MS.png" />
+    <Resource Include="Images\Pokedex\Big\350MS.png" />
+    <Resource Include="Images\Pokedex\Big\351MS.png" />
+    <Resource Include="Images\Pokedex\Big\352MS.png" />
+    <Resource Include="Images\Pokedex\Big\353MS.png" />
+    <Resource Include="Images\Pokedex\Big\354MS.png" />
+    <Resource Include="Images\Pokedex\Big\355MS.png" />
+    <Resource Include="Images\Pokedex\Big\356MS.png" />
+    <Resource Include="Images\Pokedex\Big\357MS.png" />
+    <Resource Include="Images\Pokedex\Big\358MS.png" />
+    <Resource Include="Images\Pokedex\Big\359MS.png" />
+    <Resource Include="Images\Pokedex\Big\360MS.png" />
+    <Resource Include="Images\Pokedex\Big\361MS.png" />
+    <Resource Include="Images\Pokedex\Big\362MS.png" />
+    <Resource Include="Images\Pokedex\Big\363MS.png" />
+    <Resource Include="Images\Pokedex\Big\364MS.png" />
+    <Resource Include="Images\Pokedex\Big\365MS.png" />
+    <Resource Include="Images\Pokedex\Big\366MS.png" />
+    <Resource Include="Images\Pokedex\Big\367MS.png" />
+    <Resource Include="Images\Pokedex\Big\368MS.png" />
+    <Resource Include="Images\Pokedex\Big\369MS.png" />
+    <Resource Include="Images\Pokedex\Big\370MS.png" />
+    <Resource Include="Images\Pokedex\Big\371MS.png" />
+    <Resource Include="Images\Pokedex\Big\372MS.png" />
+    <Resource Include="Images\Pokedex\Big\373MS.png" />
+    <Resource Include="Images\Pokedex\Big\374MS.png" />
+    <Resource Include="Images\Pokedex\Big\375MS.png" />
+    <Resource Include="Images\Pokedex\Big\376MS.png" />
+    <Resource Include="Images\Pokedex\Big\377MS.png" />
+    <Resource Include="Images\Pokedex\Big\378MS.png" />
+    <Resource Include="Images\Pokedex\Big\379MS.png" />
+    <Resource Include="Images\Pokedex\Big\380MS.png" />
+    <Resource Include="Images\Pokedex\Big\381MS.png" />
+    <Resource Include="Images\Pokedex\Big\382MS.png" />
+    <Resource Include="Images\Pokedex\Big\383MS.png" />
+    <Resource Include="Images\Pokedex\Big\384MS.png" />
+    <Resource Include="Images\Pokedex\Big\385MS.png" />
+    <Resource Include="Images\Pokedex\Big\386MS.png" />
+    <Resource Include="Images\Pokedex\Big\387MS.png" />
+    <Resource Include="Images\Pokedex\Big\388MS.png" />
+    <Resource Include="Images\Pokedex\Big\389MS.png" />
+    <Resource Include="Images\Pokedex\Big\390MS.png" />
+    <Resource Include="Images\Pokedex\Big\391MS.png" />
+    <Resource Include="Images\Pokedex\Big\392MS.png" />
+    <Resource Include="Images\Pokedex\Big\393MS.png" />
+    <Resource Include="Images\Pokedex\Big\394MS.png" />
+    <Resource Include="Images\Pokedex\Big\395MS.png" />
+    <Resource Include="Images\Pokedex\Big\396MS.png" />
+    <Resource Include="Images\Pokedex\Big\397MS.png" />
+    <Resource Include="Images\Pokedex\Big\398MS.png" />
+    <Resource Include="Images\Pokedex\Big\399MS.png" />
+    <Resource Include="Images\Pokedex\Big\400MS.png" />
+    <Resource Include="Images\Pokedex\Big\401MS.png" />
+    <Resource Include="Images\Pokedex\Big\402MS.png" />
+    <Resource Include="Images\Pokedex\Big\403MS.png" />
+    <Resource Include="Images\Pokedex\Big\404MS.png" />
+    <Resource Include="Images\Pokedex\Big\405MS.png" />
+    <Resource Include="Images\Pokedex\Big\406MS.png" />
+    <Resource Include="Images\Pokedex\Big\407MS.png" />
+    <Resource Include="Images\Pokedex\Big\408MS.png" />
+    <Resource Include="Images\Pokedex\Big\409MS.png" />
+    <Resource Include="Images\Pokedex\Big\410MS.png" />
+    <Resource Include="Images\Pokedex\Big\411MS.png" />
+    <Resource Include="Images\Pokedex\Big\412MS.png" />
+    <Resource Include="Images\Pokedex\Big\413MS.png" />
+    <Resource Include="Images\Pokedex\Big\414MS.png" />
+    <Resource Include="Images\Pokedex\Big\415MS.png" />
+    <Resource Include="Images\Pokedex\Big\416MS.png" />
+    <Resource Include="Images\Pokedex\Big\417MS.png" />
+    <Resource Include="Images\Pokedex\Big\418MS.png" />
+    <Resource Include="Images\Pokedex\Big\419MS.png" />
+    <Resource Include="Images\Pokedex\Big\420MS.png" />
+    <Resource Include="Images\Pokedex\Big\421MS.png" />
+    <Resource Include="Images\Pokedex\Big\422MS.png" />
+    <Resource Include="Images\Pokedex\Big\423MS.png" />
+    <Resource Include="Images\Pokedex\Big\424MS.png" />
+    <Resource Include="Images\Pokedex\Big\425MS.png" />
+    <Resource Include="Images\Pokedex\Big\426MS.png" />
+    <Resource Include="Images\Pokedex\Big\427MS.png" />
+    <Resource Include="Images\Pokedex\Big\428MS.png" />
+    <Resource Include="Images\Pokedex\Big\429MS.png" />
+    <Resource Include="Images\Pokedex\Big\430MS.png" />
+    <Resource Include="Images\Pokedex\Big\431MS.png" />
+    <Resource Include="Images\Pokedex\Big\432MS.png" />
+    <Resource Include="Images\Pokedex\Big\433MS.png" />
+    <Resource Include="Images\Pokedex\Big\434MS.png" />
+    <Resource Include="Images\Pokedex\Big\435MS.png" />
+    <Resource Include="Images\Pokedex\Big\436MS.png" />
+    <Resource Include="Images\Pokedex\Big\437MS.png" />
+    <Resource Include="Images\Pokedex\Big\438MS.png" />
+    <Resource Include="Images\Pokedex\Big\439MS.png" />
+    <Resource Include="Images\Pokedex\Big\440MS.png" />
+    <Resource Include="Images\Pokedex\Big\441MS.png" />
+    <Resource Include="Images\Pokedex\Big\442MS.png" />
+    <Resource Include="Images\Pokedex\Big\443MS.png" />
+    <Resource Include="Images\Pokedex\Big\444MS.png" />
+    <Resource Include="Images\Pokedex\Big\445MS.png" />
+    <Resource Include="Images\Pokedex\Big\446MS.png" />
+    <Resource Include="Images\Pokedex\Big\447MS.png" />
+    <Resource Include="Images\Pokedex\Big\448MS.png" />
+    <Resource Include="Images\Pokedex\Big\449MS.png" />
+    <Resource Include="Images\Pokedex\Big\450MS.png" />
+    <Resource Include="Images\Pokedex\Big\451MS.png" />
+    <Resource Include="Images\Pokedex\Big\452MS.png" />
+    <Resource Include="Images\Pokedex\Big\453MS.png" />
+    <Resource Include="Images\Pokedex\Big\454MS.png" />
+    <Resource Include="Images\Pokedex\Big\455MS.png" />
+    <Resource Include="Images\Pokedex\Big\456MS.png" />
+    <Resource Include="Images\Pokedex\Big\457MS.png" />
+    <Resource Include="Images\Pokedex\Big\458MS.png" />
+    <Resource Include="Images\Pokedex\Big\459MS.png" />
+    <Resource Include="Images\Pokedex\Big\460MS.png" />
+    <Resource Include="Images\Pokedex\Big\461MS.png" />
+    <Resource Include="Images\Pokedex\Big\462MS.png" />
+    <Resource Include="Images\Pokedex\Big\463MS.png" />
+    <Resource Include="Images\Pokedex\Big\464MS.png" />
+    <Resource Include="Images\Pokedex\Big\465MS.png" />
+    <Resource Include="Images\Pokedex\Big\466MS.png" />
+    <Resource Include="Images\Pokedex\Big\467MS.png" />
+    <Resource Include="Images\Pokedex\Big\468MS.png" />
+    <Resource Include="Images\Pokedex\Big\469MS.png" />
+    <Resource Include="Images\Pokedex\Big\470MS.png" />
+    <Resource Include="Images\Pokedex\Big\471MS.png" />
+    <Resource Include="Images\Pokedex\Big\472MS.png" />
+    <Resource Include="Images\Pokedex\Big\473MS.png" />
+    <Resource Include="Images\Pokedex\Big\474MS.png" />
+    <Resource Include="Images\Pokedex\Big\475MS.png" />
+    <Resource Include="Images\Pokedex\Big\476MS.png" />
+    <Resource Include="Images\Pokedex\Big\477MS.png" />
+    <Resource Include="Images\Pokedex\Big\478MS.png" />
+    <Resource Include="Images\Pokedex\Big\479MS.png" />
+    <Resource Include="Images\Pokedex\Big\480MS.png" />
+    <Resource Include="Images\Pokedex\Big\481MS.png" />
+    <Resource Include="Images\Pokedex\Big\482MS.png" />
+    <Resource Include="Images\Pokedex\Big\483MS.png" />
+    <Resource Include="Images\Pokedex\Big\484MS.png" />
+    <Resource Include="Images\Pokedex\Big\485MS.png" />
+    <Resource Include="Images\Pokedex\Big\486MS.png" />
+    <Resource Include="Images\Pokedex\Big\487MS.png" />
+    <Resource Include="Images\Pokedex\Big\488MS.png" />
+    <Resource Include="Images\Pokedex\Big\489MS.png" />
+    <Resource Include="Images\Pokedex\Big\490MS.png" />
+    <Resource Include="Images\Pokedex\Big\491MS.png" />
+    <Resource Include="Images\Pokedex\Big\492MS.png" />
+    <Resource Include="Images\Pokedex\Big\493MS.png" />
+    <Resource Include="Images\Pokedex\Big\494MS.png" />
+    <Resource Include="Images\Pokedex\Big\495MS.png" />
+    <Resource Include="Images\Pokedex\Big\496MS.png" />
+    <Resource Include="Images\Pokedex\Big\497MS.png" />
+    <Resource Include="Images\Pokedex\Big\498MS.png" />
+    <Resource Include="Images\Pokedex\Big\499MS.png" />
+    <Resource Include="Images\Pokedex\Big\500MS.png" />
+    <Resource Include="Images\Pokedex\Big\501MS.png" />
+    <Resource Include="Images\Pokedex\Big\502MS.png" />
+    <Resource Include="Images\Pokedex\Big\503MS.png" />
+    <Resource Include="Images\Pokedex\Big\504MS.png" />
+    <Resource Include="Images\Pokedex\Big\505MS.png" />
+    <Resource Include="Images\Pokedex\Big\506MS.png" />
+    <Resource Include="Images\Pokedex\Big\507MS.png" />
+    <Resource Include="Images\Pokedex\Big\508MS.png" />
+    <Resource Include="Images\Pokedex\Big\509MS.png" />
+    <Resource Include="Images\Pokedex\Big\510MS.png" />
+    <Resource Include="Images\Pokedex\Big\511MS.png" />
+    <Resource Include="Images\Pokedex\Big\512MS.png" />
+    <Resource Include="Images\Pokedex\Big\513MS.png" />
+    <Resource Include="Images\Pokedex\Big\514MS.png" />
+    <Resource Include="Images\Pokedex\Big\515MS.png" />
+    <Resource Include="Images\Pokedex\Big\516MS.png" />
+    <Resource Include="Images\Pokedex\Big\517MS.png" />
+    <Resource Include="Images\Pokedex\Big\518MS.png" />
+    <Resource Include="Images\Pokedex\Big\519MS.png" />
+    <Resource Include="Images\Pokedex\Big\520MS.png" />
+    <Resource Include="Images\Pokedex\Big\521MS.png" />
+    <Resource Include="Images\Pokedex\Big\522MS.png" />
+    <Resource Include="Images\Pokedex\Big\523MS.png" />
+    <Resource Include="Images\Pokedex\Big\524MS.png" />
+    <Resource Include="Images\Pokedex\Big\525MS.png" />
+    <Resource Include="Images\Pokedex\Big\526MS.png" />
+    <Resource Include="Images\Pokedex\Big\527MS.png" />
+    <Resource Include="Images\Pokedex\Big\528MS.png" />
+    <Resource Include="Images\Pokedex\Big\529MS.png" />
+    <Resource Include="Images\Pokedex\Big\530MS.png" />
+    <Resource Include="Images\Pokedex\Big\531MS.png" />
+    <Resource Include="Images\Pokedex\Big\532MS.png" />
+    <Resource Include="Images\Pokedex\Big\533MS.png" />
+    <Resource Include="Images\Pokedex\Big\534MS.png" />
+    <Resource Include="Images\Pokedex\Big\535MS.png" />
+    <Resource Include="Images\Pokedex\Big\536MS.png" />
+    <Resource Include="Images\Pokedex\Big\537MS.png" />
+    <Resource Include="Images\Pokedex\Big\538MS.png" />
+    <Resource Include="Images\Pokedex\Big\539MS.png" />
+    <Resource Include="Images\Pokedex\Big\540MS.png" />
+    <Resource Include="Images\Pokedex\Big\541MS.png" />
+    <Resource Include="Images\Pokedex\Big\542MS.png" />
+    <Resource Include="Images\Pokedex\Big\543MS.png" />
+    <Resource Include="Images\Pokedex\Big\544MS.png" />
+    <Resource Include="Images\Pokedex\Big\545MS.png" />
+    <Resource Include="Images\Pokedex\Big\546MS.png" />
+    <Resource Include="Images\Pokedex\Big\547MS.png" />
+    <Resource Include="Images\Pokedex\Big\548MS.png" />
+    <Resource Include="Images\Pokedex\Big\549MS.png" />
+    <Resource Include="Images\Pokedex\Big\550MS.png" />
+    <Resource Include="Images\Pokedex\Big\551MS.png" />
+    <Resource Include="Images\Pokedex\Big\552MS.png" />
+    <Resource Include="Images\Pokedex\Big\553MS.png" />
+    <Resource Include="Images\Pokedex\Big\554MS.png" />
+    <Resource Include="Images\Pokedex\Big\555MS.png" />
+    <Resource Include="Images\Pokedex\Big\556MS.png" />
+    <Resource Include="Images\Pokedex\Big\557MS.png" />
+    <Resource Include="Images\Pokedex\Big\558MS.png" />
+    <Resource Include="Images\Pokedex\Big\559MS.png" />
+    <Resource Include="Images\Pokedex\Big\560MS.png" />
+    <Resource Include="Images\Pokedex\Big\561MS.png" />
+    <Resource Include="Images\Pokedex\Big\562MS.png" />
+    <Resource Include="Images\Pokedex\Big\563MS.png" />
+    <Resource Include="Images\Pokedex\Big\564MS.png" />
+    <Resource Include="Images\Pokedex\Big\565MS.png" />
+    <Resource Include="Images\Pokedex\Big\566MS.png" />
+    <Resource Include="Images\Pokedex\Big\567MS.png" />
+    <Resource Include="Images\Pokedex\Big\568MS.png" />
+    <Resource Include="Images\Pokedex\Big\569MS.png" />
+    <Resource Include="Images\Pokedex\Big\570MS.png" />
+    <Resource Include="Images\Pokedex\Big\571MS.png" />
+    <Resource Include="Images\Pokedex\Big\572MS.png" />
+    <Resource Include="Images\Pokedex\Big\573MS.png" />
+    <Resource Include="Images\Pokedex\Big\574MS.png" />
+    <Resource Include="Images\Pokedex\Big\575MS.png" />
+    <Resource Include="Images\Pokedex\Big\576MS.png" />
+    <Resource Include="Images\Pokedex\Big\577MS.png" />
+    <Resource Include="Images\Pokedex\Big\578MS.png" />
+    <Resource Include="Images\Pokedex\Big\579MS.png" />
+    <Resource Include="Images\Pokedex\Big\580MS.png" />
+    <Resource Include="Images\Pokedex\Big\581MS.png" />
+    <Resource Include="Images\Pokedex\Big\582MS.png" />
+    <Resource Include="Images\Pokedex\Big\583MS.png" />
+    <Resource Include="Images\Pokedex\Big\584MS.png" />
+    <Resource Include="Images\Pokedex\Big\585MS.png" />
+    <Resource Include="Images\Pokedex\Big\586MS.png" />
+    <Resource Include="Images\Pokedex\Big\587MS.png" />
+    <Resource Include="Images\Pokedex\Big\588MS.png" />
+    <Resource Include="Images\Pokedex\Big\589MS.png" />
+    <Resource Include="Images\Pokedex\Big\590MS.png" />
+    <Resource Include="Images\Pokedex\Big\591MS.png" />
+    <Resource Include="Images\Pokedex\Big\592MS.png" />
+    <Resource Include="Images\Pokedex\Big\593MS.png" />
+    <Resource Include="Images\Pokedex\Big\594MS.png" />
+    <Resource Include="Images\Pokedex\Big\595MS.png" />
+    <Resource Include="Images\Pokedex\Big\596MS.png" />
+    <Resource Include="Images\Pokedex\Big\597MS.png" />
+    <Resource Include="Images\Pokedex\Big\598MS.png" />
+    <Resource Include="Images\Pokedex\Big\599MS.png" />
+    <Resource Include="Images\Pokedex\Big\600MS.png" />
+    <Resource Include="Images\Pokedex\Big\601MS.png" />
+    <Resource Include="Images\Pokedex\Big\602MS.png" />
+    <Resource Include="Images\Pokedex\Big\603MS.png" />
+    <Resource Include="Images\Pokedex\Big\604MS.png" />
+    <Resource Include="Images\Pokedex\Big\605MS.png" />
+    <Resource Include="Images\Pokedex\Big\606MS.png" />
+    <Resource Include="Images\Pokedex\Big\607MS.png" />
+    <Resource Include="Images\Pokedex\Big\608MS.png" />
+    <Resource Include="Images\Pokedex\Big\609MS.png" />
+    <Resource Include="Images\Pokedex\Big\610MS.png" />
+    <Resource Include="Images\Pokedex\Big\611MS.png" />
+    <Resource Include="Images\Pokedex\Big\612MS.png" />
+    <Resource Include="Images\Pokedex\Big\613MS.png" />
+    <Resource Include="Images\Pokedex\Big\614MS.png" />
+    <Resource Include="Images\Pokedex\Big\615MS.png" />
+    <Resource Include="Images\Pokedex\Big\616MS.png" />
+    <Resource Include="Images\Pokedex\Big\617MS.png" />
+    <Resource Include="Images\Pokedex\Big\618MS.png" />
+    <Resource Include="Images\Pokedex\Big\619MS.png" />
+    <Resource Include="Images\Pokedex\Big\620MS.png" />
+    <Resource Include="Images\Pokedex\Big\621MS.png" />
+    <Resource Include="Images\Pokedex\Big\622MS.png" />
+    <Resource Include="Images\Pokedex\Big\623MS.png" />
+    <Resource Include="Images\Pokedex\Big\624MS.png" />
+    <Resource Include="Images\Pokedex\Big\625MS.png" />
+    <Resource Include="Images\Pokedex\Big\626MS.png" />
+    <Resource Include="Images\Pokedex\Big\627MS.png" />
+    <Resource Include="Images\Pokedex\Big\628MS.png" />
+    <Resource Include="Images\Pokedex\Big\629MS.png" />
+    <Resource Include="Images\Pokedex\Big\630MS.png" />
+    <Resource Include="Images\Pokedex\Big\631MS.png" />
+    <Resource Include="Images\Pokedex\Big\632MS.png" />
+    <Resource Include="Images\Pokedex\Big\633MS.png" />
+    <Resource Include="Images\Pokedex\Big\634MS.png" />
+    <Resource Include="Images\Pokedex\Big\635MS.png" />
+    <Resource Include="Images\Pokedex\Big\636MS.png" />
+    <Resource Include="Images\Pokedex\Big\637MS.png" />
+    <Resource Include="Images\Pokedex\Big\638MS.png" />
+    <Resource Include="Images\Pokedex\Big\639MS.png" />
+    <Resource Include="Images\Pokedex\Big\640MS.png" />
+    <Resource Include="Images\Pokedex\Big\641MS.png" />
+    <Resource Include="Images\Pokedex\Big\642MS.png" />
+    <Resource Include="Images\Pokedex\Big\643MS.png" />
+    <Resource Include="Images\Pokedex\Big\644MS.png" />
+    <Resource Include="Images\Pokedex\Big\645MS.png" />
+    <Resource Include="Images\Pokedex\Big\646MS.png" />
+    <Resource Include="Images\Pokedex\Big\647MS.png" />
+    <Resource Include="Images\Pokedex\Big\648MS.png" />
+    <Resource Include="Images\Pokedex\Big\649MS.png" />
+    <Resource Include="Images\Pokedex\Big\650MS.png" />
+    <Resource Include="Images\Pokedex\Big\651MS.png" />
+    <Resource Include="Images\Pokedex\Big\652MS.png" />
+    <Resource Include="Images\Pokedex\Big\653MS.png" />
+    <Resource Include="Images\Pokedex\Big\654MS.png" />
+    <Resource Include="Images\Pokedex\Big\655MS.png" />
+    <Resource Include="Images\Pokedex\Big\656MS.png" />
+    <Resource Include="Images\Pokedex\Big\657MS.png" />
+    <Resource Include="Images\Pokedex\Big\658MS.png" />
+    <Resource Include="Images\Pokedex\Big\659MS.png" />
+    <Resource Include="Images\Pokedex\Big\660MS.png" />
+    <Resource Include="Images\Pokedex\Big\661MS.png" />
+    <Resource Include="Images\Pokedex\Big\662MS.png" />
+    <Resource Include="Images\Pokedex\Big\663MS.png" />
+    <Resource Include="Images\Pokedex\Big\664MS.png" />
+    <Resource Include="Images\Pokedex\Big\665MS.png" />
+    <Resource Include="Images\Pokedex\Big\666MS.png" />
+    <Resource Include="Images\Pokedex\Big\667MS.png" />
+    <Resource Include="Images\Pokedex\Big\668MS.png" />
+    <Resource Include="Images\Pokedex\Big\669MS.png" />
+    <Resource Include="Images\Pokedex\Big\670MS.png" />
+    <Resource Include="Images\Pokedex\Big\671MS.png" />
+    <Resource Include="Images\Pokedex\Big\672MS.png" />
+    <Resource Include="Images\Pokedex\Big\673MS.png" />
+    <Resource Include="Images\Pokedex\Big\674MS.png" />
+    <Resource Include="Images\Pokedex\Big\675MS.png" />
+    <Resource Include="Images\Pokedex\Big\676MS.png" />
+    <Resource Include="Images\Pokedex\Big\677MS.png" />
+    <Resource Include="Images\Pokedex\Big\678MS.png" />
+    <Resource Include="Images\Pokedex\Big\679MS.png" />
+    <Resource Include="Images\Pokedex\Big\680MS.png" />
+    <Resource Include="Images\Pokedex\Big\681MS.png" />
+    <Resource Include="Images\Pokedex\Big\682MS.png" />
+    <Resource Include="Images\Pokedex\Big\683MS.png" />
+    <Resource Include="Images\Pokedex\Big\684MS.png" />
+    <Resource Include="Images\Pokedex\Big\685MS.png" />
+    <Resource Include="Images\Pokedex\Big\686MS.png" />
+    <Resource Include="Images\Pokedex\Big\687MS.png" />
+    <Resource Include="Images\Pokedex\Big\688MS.png" />
+    <Resource Include="Images\Pokedex\Big\689MS.png" />
+    <Resource Include="Images\Pokedex\Big\690MS.png" />
+    <Resource Include="Images\Pokedex\Big\691MS.png" />
+    <Resource Include="Images\Pokedex\Big\692MS.png" />
+    <Resource Include="Images\Pokedex\Big\693MS.png" />
+    <Resource Include="Images\Pokedex\Big\694MS.png" />
+    <Resource Include="Images\Pokedex\Big\695MS.png" />
+    <Resource Include="Images\Pokedex\Big\696MS.png" />
+    <Resource Include="Images\Pokedex\Big\697MS.png" />
+    <Resource Include="Images\Pokedex\Big\698MS.png" />
+    <Resource Include="Images\Pokedex\Big\699MS.png" />
+    <Resource Include="Images\Pokedex\Big\700MS.png" />
+    <Resource Include="Images\Pokedex\Big\701MS.png" />
+    <Resource Include="Images\Pokedex\Big\702MS.png" />
+    <Resource Include="Images\Pokedex\Big\703MS.png" />
+    <Resource Include="Images\Pokedex\Big\704MS.png" />
+    <Resource Include="Images\Pokedex\Big\705MS.png" />
+    <Resource Include="Images\Pokedex\Big\706MS.png" />
+    <Resource Include="Images\Pokedex\Big\707MS.png" />
+    <Resource Include="Images\Pokedex\Big\708MS.png" />
+    <Resource Include="Images\Pokedex\Big\709MS.png" />
+    <Resource Include="Images\Pokedex\Big\710MS.png" />
+    <Resource Include="Images\Pokedex\Big\711MS.png" />
+    <Resource Include="Images\Pokedex\Big\712MS.png" />
+    <Resource Include="Images\Pokedex\Big\713MS.png" />
+    <Resource Include="Images\Pokedex\Big\714MS.png" />
+    <Resource Include="Images\Pokedex\Big\715MS.png" />
+    <Resource Include="Images\Pokedex\Big\716MS.png" />
+    <Resource Include="Images\Pokedex\Big\717MS.png" />
+    <Resource Include="Images\Pokedex\Big\718MS.png" />
+    <Resource Include="Images\Pokedex\Big\719MS.png" />
+    <Resource Include="Images\Pokedex\Big\720MS.png" />
+    <Resource Include="Images\Pokedex\Big\721MS.png" />
+    <Resource Include="Images\Pokedex\Big\722MS.png" />
+    <Resource Include="Images\Pokedex\Big\723MS.png" />
+    <Resource Include="Images\Pokedex\Big\724MS.png" />
+    <Resource Include="Images\Pokedex\Big\725MS.png" />
+    <Resource Include="Images\Pokedex\Big\726MS.png" />
+    <Resource Include="Images\Pokedex\Big\727MS.png" />
+    <Resource Include="Images\Pokedex\Big\728MS.png" />
+    <Resource Include="Images\Pokedex\Big\729MS.png" />
+    <Resource Include="Images\Pokedex\Big\730MS.png" />
+    <Resource Include="Images\Pokedex\Big\731MS.png" />
+    <Resource Include="Images\Pokedex\Big\732MS.png" />
+    <Resource Include="Images\Pokedex\Big\733MS.png" />
+    <Resource Include="Images\Pokedex\Big\734MS.png" />
+    <Resource Include="Images\Pokedex\Big\735MS.png" />
+    <Resource Include="Images\Pokedex\Big\736MS.png" />
+    <Resource Include="Images\Pokedex\Big\737MS.png" />
+    <Resource Include="Images\Pokedex\Big\738MS.png" />
+    <Resource Include="Images\Pokedex\Big\739MS.png" />
+    <Resource Include="Images\Pokedex\Big\740MS.png" />
+    <Resource Include="Images\Pokedex\Big\741MS.png" />
+    <Resource Include="Images\Pokedex\Big\742MS.png" />
+    <Resource Include="Images\Pokedex\Big\743MS.png" />
+    <Resource Include="Images\Pokedex\Big\744MS.png" />
+    <Resource Include="Images\Pokedex\Big\745MS.png" />
+    <Resource Include="Images\Pokedex\Big\746MS.png" />
+    <Resource Include="Images\Pokedex\Big\747MS.png" />
+    <Resource Include="Images\Pokedex\Big\748MS.png" />
+    <Resource Include="Images\Pokedex\Big\749MS.png" />
+    <Resource Include="Images\Pokedex\Big\750MS.png" />
+    <Resource Include="Images\Pokedex\Big\751MS.png" />
+    <Resource Include="Images\Pokedex\Big\752MS.png" />
+    <Resource Include="Images\Pokedex\Big\753MS.png" />
+    <Resource Include="Images\Pokedex\Big\754MS.png" />
+    <Resource Include="Images\Pokedex\Big\755MS.png" />
+    <Resource Include="Images\Pokedex\Big\756MS.png" />
+    <Resource Include="Images\Pokedex\Big\757MS.png" />
+    <Resource Include="Images\Pokedex\Big\758MS.png" />
+    <Resource Include="Images\Pokedex\Big\759MS.png" />
+    <Resource Include="Images\Pokedex\Big\760MS.png" />
+    <Resource Include="Images\Pokedex\Big\761MS.png" />
+    <Resource Include="Images\Pokedex\Big\762MS.png" />
+    <Resource Include="Images\Pokedex\Big\763MS.png" />
+    <Resource Include="Images\Pokedex\Big\764MS.png" />
+    <Resource Include="Images\Pokedex\Big\765MS.png" />
+    <Resource Include="Images\Pokedex\Big\766MS.png" />
+    <Resource Include="Images\Pokedex\Big\767MS.png" />
+    <Resource Include="Images\Pokedex\Big\768MS.png" />
+    <Resource Include="Images\Pokedex\Big\769MS.png" />
+    <Resource Include="Images\Pokedex\Big\770MS.png" />
+    <Resource Include="Images\Pokedex\Big\771MS.png" />
+    <Resource Include="Images\Pokedex\Big\772MS.png" />
+    <Resource Include="Images\Pokedex\Big\773MS.png" />
+    <Resource Include="Images\Pokedex\Big\774MS.png" />
+    <Resource Include="Images\Pokedex\Big\775MS.png" />
+    <Resource Include="Images\Pokedex\Big\776MS.png" />
+    <Resource Include="Images\Pokedex\Big\777MS.png" />
+    <Resource Include="Images\Pokedex\Big\778MS.png" />
+    <Resource Include="Images\Pokedex\Big\779MS.png" />
+    <Resource Include="Images\Pokedex\Big\780MS.png" />
+    <Resource Include="Images\Pokedex\Big\781MS.png" />
+    <Resource Include="Images\Pokedex\Big\782MS.png" />
+    <Resource Include="Images\Pokedex\Big\783MS.png" />
+    <Resource Include="Images\Pokedex\Big\784MS.png" />
+    <Resource Include="Images\Pokedex\Big\785MS.png" />
+    <Resource Include="Images\Pokedex\Big\786MS.png" />
+    <Resource Include="Images\Pokedex\Big\787MS.png" />
+    <Resource Include="Images\Pokedex\Big\788MS.png" />
+    <Resource Include="Images\Pokedex\Big\789MS.png" />
+    <Resource Include="Images\Pokedex\Big\790MS.png" />
+    <Resource Include="Images\Pokedex\Big\791MS.png" />
+    <Resource Include="Images\Pokedex\Big\792MS.png" />
+    <Resource Include="Images\Pokedex\Big\793MS.png" />
+    <Resource Include="Images\Pokedex\Big\794MS.png" />
+    <Resource Include="Images\Pokedex\Big\795MS.png" />
+    <Resource Include="Images\Pokedex\Big\796MS.png" />
+    <Resource Include="Images\Pokedex\Big\797MS.png" />
+    <Resource Include="Images\Pokedex\Big\798MS.png" />
+    <Resource Include="Images\Pokedex\Big\799MS.png" />
+    <Resource Include="Images\Pokedex\Big\800MS.png" />
+    <Resource Include="Images\Pokedex\Big\801MS.png" />
+    <Resource Include="Images\Pokedex\Big\802MS.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

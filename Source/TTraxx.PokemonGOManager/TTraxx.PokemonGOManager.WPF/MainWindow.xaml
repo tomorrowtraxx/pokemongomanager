@@ -1,0 +1,35 @@
+﻿<Window x:Class="TTraxx.PokemonGOManager.WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TTraxx.PokemonGOManager.WPF"
+        mc:Ignorable="d"
+        Title="Pokémon GO Manager" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="12" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Button x:Name="btnScrapePokédex" Grid.Row="0" Content="Scrape Pokédex" 
+                HorizontalAlignment="Stretch" Margin="10" 
+                VerticalAlignment="Center" Height="24" 
+                Click="btnScrapePokedex_Click"/>
+        <Button x:Name="btnScrapePokémon" Grid.Row="1" Content="Scrape Pokémon" 
+                HorizontalAlignment="Stretch" Margin="10" 
+                VerticalAlignment="Center" Height="24" 
+                Click="btnScrapePokemon_Click"/>
+        <Button x:Name="btnScrapeSprites" Grid.Row="2" Content="Scrape Sprites" 
+                HorizontalAlignment="Stretch" Margin="10" 
+                VerticalAlignment="Center" Height="24" 
+                Click="btnScrapeSprites_Click"/>
+        <Button x:Name="btnLoadPokédex" Grid.Row="4" Content="Pokédex" 
+                HorizontalAlignment="Stretch" Margin="10" 
+                VerticalAlignment="Center" Height="24" 
+                Click="btnLoadPokédex_Click"/>
+    </Grid>
+</Window>

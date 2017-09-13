@@ -1,0 +1,10 @@
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Entities\bin\Debug\TTraxx.PokemonGOManager.Entities.dll
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Entities\bin\Debug\TTraxx.PokemonGOManager.Entities.pdb
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Entities\obj\Debug\TTraxx.PokemonGOManager.Entities.csprojResolveAssemblyReference.cache
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Entities\obj\Debug\TTraxx.PokemonGOManager.Entities.dll
+C:\Users\tomor\documents\visual studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Entities\obj\Debug\TTraxx.PokemonGOManager.Entities.pdb
+C:\Users\Jasper\Documents\Visual Studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Entities\bin\Debug\TTraxx.PokemonGOManager.Entities.dll
+C:\Users\Jasper\Documents\Visual Studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Entities\bin\Debug\TTraxx.PokemonGOManager.Entities.pdb
+C:\Users\Jasper\Documents\Visual Studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Entities\obj\Debug\TTraxx.PokemonGOManager.Entities.csprojResolveAssemblyReference.cache
+C:\Users\Jasper\Documents\Visual Studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Entities\obj\Debug\TTraxx.PokemonGOManager.Entities.dll
+C:\Users\Jasper\Documents\Visual Studio 2017\Projects\TTraxx.PokemonGOManager\TTraxx.PokemonGOManager.Entities\obj\Debug\TTraxx.PokemonGOManager.Entities.pdb
